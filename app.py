@@ -102,4 +102,7 @@ def send_alerts_pagerduty(event, context):
 
 
 if __name__ == "__main__":
+    os.environ['PAGERDUTY_ENDPOINT'] = "https://events.pagerduty.com/v2/enqueue"
+    os.environ['PAGERDUTY_INTEGRATION_KEY'] = "XXXXXXXXXXXXXXXXXX"
+    os.environ['CLOUD_LOGGING_ENABLED'] = "false"
     send_alerts_pagerduty(event1, context1)
